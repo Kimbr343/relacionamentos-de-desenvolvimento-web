@@ -1,0 +1,32 @@
+<h1>Filmes</h1>
+
+<table border = '1'>
+    <tr>
+        <th>Nome</th>
+        <th>Ano de Lançamento</th>
+    </tr>
+
+        {{#each filmes}}
+
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{anoLancamento}}</td>
+        <td>{{diretorId}}</td>
+
+        <td>
+            <a href = '/editar/filmes/{{id}}'>Editar</a>
+            <a href = '/filmes/{{id}}'>Criar</a>
+            <a href = '/mostrar/filmes/{{id}}'>mostrar ficha</a>
+
+
+            <form action = '/deletar/filmes/{{id}}?_method=DELETE' method='POST'>
+                <button type = 'submit'>Excluir</button>
+            </form>
+        </td>
+    </tr>
+
+    {{/each}}
+
+</table>
+
+<a href = '/'>Home</a>
